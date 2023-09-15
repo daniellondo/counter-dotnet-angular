@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-card-title class="title">{{counter.count}}</mat-card-title>
+  <mat-card-content>
+      <button mat-button (click)="sumCounter()" >+</button>
+      <button mat-button (click)="resetCounter()" [disabled] = "counter.count == 0">Reset</button>
+  </mat-card-content>
+</mat-card>
