@@ -18,9 +18,13 @@ export class CounterService {
   };;
 
   constructor(private http: HttpClient) {
+
   }
 
   getCounter(): void {
+    if(this.counter.id === 0){
+      this.addCounter(this.counter).then();
+    }
     this.http.get<EndpointResponse>(`${this.API_URL}`)
     .subscribe((data) => {
       this.counter = data.result;
